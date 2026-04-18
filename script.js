@@ -24,7 +24,7 @@ function toggleFaq(el) {
 // ANIMAÇÕES FADE-IN AO ROLAR
 // ============================
 var observerOptions = {
-  threshold: 0.12,
+  threshold: 0.10,
   rootMargin: '0px 0px -40px 0px'
 };
 
@@ -32,7 +32,6 @@ var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Para de observar depois que já apareceu (melhor performance)
       observer.unobserve(entry.target);
     }
   });
